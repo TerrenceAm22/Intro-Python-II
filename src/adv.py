@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -37,6 +38,7 @@ room['treasure'].s_to = room['narrow']
 # Main
 #
 
+
 # Make a new player object that is currently in the 'outside' room.
 
 # Write a loop that:
@@ -49,3 +51,27 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+def command(self, move):
+    """ 
+    Function that provides commands
+    that facilitate direction 
+    foo text game assignment
+    """
+    try:
+        if move == 'n':
+            return self.current_room.n_to
+        elif move == 'e':
+            return self.current_room.e_to
+        elif move == 's':
+            return self.current_room.s_to
+        elif move == 'w':
+            return self.current_room.w_to
+    
+    except ValueError:
+        print("Not a valid input")
+        
+
+
+    
+
